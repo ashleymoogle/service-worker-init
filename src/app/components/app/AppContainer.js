@@ -1,8 +1,5 @@
-import {observer} from 'mobx-react'
-
 import './AppContainer.css'
 
-@observer
 class AppContainer extends React.Component {
     constructor (props) {
         super(props)

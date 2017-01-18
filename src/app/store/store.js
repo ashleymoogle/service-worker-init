@@ -1,4 +1,3 @@
-import {observable, action, computed, reaction} from 'mobx'
 import {Promise} from 'es6-promise'
 import _ from 'lodash'
 import i18n from '../i18n'
@@ -8,14 +7,6 @@ import toastr from 'toastr'
 import axios from 'axios'
 
 export default class Store {
-
-    @observable state = {}
-
-    reactions = {}
-
-    @computed get something () {
-        //return
-    }
 
     init = () => {
         // Add a response interceptor

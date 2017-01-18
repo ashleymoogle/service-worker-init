@@ -1,5 +1,4 @@
 import React from 'react'
-import {observer} from 'mobx-react'
 
 import {I18nextProvider} from 'react-i18next'
 import i18n from '../i18n'
@@ -8,7 +7,6 @@ import { Router, Route } from 'react-router'
 
 import AppContainer from './app/AppContainer'
 
-@observer
 class ReactContainer extends React.Component {
 
     createElement = (Component, props) => {
