@@ -4,18 +4,18 @@ import ready from 'document-ready-promise'
 import {browserHistory} from 'react-router'
 
 import ReactContainer from './components/ReactContainer'
-import Store from './store/store.js'
+import AppFactory from './factories/AppFactory.js'
 import './components/styles.css'
 
 // Create Store and populate with data
-const store = new Store()
-store.history = browserHistory
+const factory = new AppFactory()
+factory.history = browserHistory
 
-store.init()
+factory.init()
     .then(ready)
     .then(() => {
         ReactDOM.render((
-            <ReactContainer store={store}/>
+            <ReactContainer factory={factory}/>
         ), document.getElementById('mount'))
     })
 

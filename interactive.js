@@ -8,6 +8,7 @@ const DEV = false;
 const react = [
     "react-dom",
     "react-i18next",
+    "react-router-redux",
     "react-router",
     "react-redux",
     "redux",

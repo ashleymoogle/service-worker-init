@@ -1,9 +1,9 @@
 import './AppContainer.css'
+import MenuNavTop from '../menus/MenuNavTop'
 
 class AppContainer extends React.Component {
     constructor (props) {
         super(props)
-        this.state = {"bool": false}
     }
 
     componentDidMount() {
@@ -11,18 +11,20 @@ class AppContainer extends React.Component {
     }
 
     render () {
-        let {store} = this.props
-        console.log(store)
+        let {factory, counter, value, plus, less} = this.props
+        console.log(this.props)
         return (
             <div className={"wrapper"}>
-                <button onClick={this.handleClick}>Click me</button>
-                <br/>
-                <span>{this.state.bool.toString()}</span>
+                <div>
+                    <MenuNavTop factory={factory}/>
+                </div>
+                <h1>{counter.getState()}</h1>
+                <h1>{value}</h1>
+                <button onClick={plus}>+</button>
+                <button onClick={less}>-</button>
+                <button onClick={() => console.log(counter.getState())}>state</button>
             </div>
         )
-    }
-    handleClick = () => {
-        this.setState({"bool": !this.state.bool})
     }
 }
 
