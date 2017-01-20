@@ -13,8 +13,7 @@
     "build": "webpack --progress",
     "start": "webpack-dev-server --host 0.0.0.0",
     "watch": "webpack --watch",
-    "test": "karma start",
-    "test-react": "jest"
+    "test": "jest"
   },
   "private": true,
   "dependencies": {

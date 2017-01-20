@@ -74,7 +74,6 @@ let common = {
         }
     },
     externals: {
-        "angular": "angular",
         "React": "react"
     },
     stats: {
