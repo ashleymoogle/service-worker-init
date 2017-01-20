@@ -1,3 +1,4 @@
+import { Link, browserHistory } from 'react-router'
 import "./MenuNavTop.css"
 
 class MenuNavTop extends React.Component {
@@ -13,10 +14,12 @@ class MenuNavTop extends React.Component {
         let {factory} = this.props
         return (
             <div>
-                <ul>
-                    <li onClick={() => { factory.history.push(`/`)}}>HOME</li>
-                    <li onClick={() => { factory.history.push(`/test`)}}>TEST</li>
-                </ul>
+                <header>
+                    <ul>
+                        <li><Link to="/">HOME</Link></li>
+                        <li onClick={() => browserHistory.push('/test')}>TEST</li>
+                    </ul>
+                </header>
             </div>
         )
     }
