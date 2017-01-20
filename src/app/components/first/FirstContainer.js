@@ -13,22 +13,17 @@ class FirstContainer extends React.Component {
     }
 
     render () {
-        let {factory, counter, counter2, onIncrement, onDecrement} = this.props
+        let {factory, counter, onIncrement, onDecrement} = this.props
         return (
             <div className={"wrapper"}>
-                <h2>Home</h2>
                 <div>
                     <MenuNavTop factory={factory}/>
                 </div>
+                <h2>HOME</h2>
                 <div>
-                    <h1>{counter}</h1>
+                    <h3>COUNTER 1 : {counter}</h3>
                     <button onClick={() => onIncrement()}>+</button>
                     <button onClick={() => onDecrement()}>-</button>
-                </div>
-                <div>
-                    <h1>{counter2}</h1>
-                    <button onClick={() => onIncrement('2')}>+</button>
-                    <button onClick={() => onDecrement('2')}>-</button>
                 </div>
             </div>
         )
@@ -37,22 +32,21 @@ class FirstContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        counter: state.counter,
-        counter2: state.counter2
+        counter: state.counter
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         dispatch,
-        onIncrement:(x = "") => {
+        onIncrement:() => {
             dispatch({
-                type:`INCREMENT${x}`,
+                type:`INCREMENT`,
             })
         },
-        onDecrement:(x = "") => {
+        onDecrement:() => {
             dispatch({
-                type:`DECREMENT${x}`,
+                type:`DECREMENT`,
             })
         }
     }

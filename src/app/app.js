@@ -44,4 +44,6 @@ factory.init()
                 </I18nextProvider>
             </Provider>
         ), document.getElementById('mount'))
+    }).catch((e) => {
+        setTimeout(()=> { throw e})
     })
